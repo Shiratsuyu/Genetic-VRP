@@ -32,12 +32,15 @@ namespace genetic_ui
         private int population;
         private int iteration;
         private double select_best;
+        private double cross;
         private double transform;
         private double new_car;
+        private bool operator_choose;
+        private bool output_style;
+
         private MetaData meta;
         private GeneticCore core;
         private CancellationTokenSource kill_task;
-
         private List<string> information_source;
 
         public CanvasWindow()
@@ -45,8 +48,10 @@ namespace genetic_ui
             InitializeComponent();
         }
 
-        public void SendArgument(bool _import_xml, string _import_path, int _map, int _ashbin, int _truck, int _capacity, int _demand,
-            bool _export_xml, string _export_path, int _population, int _iteration, double _select_best, double _transform, double _new_car)
+        public void SendArgument(bool _import_xml, string _import_path, int _map, int _ashbin, int _truck,
+            int _capacity, int _demand, bool _export_xml, string _export_path, int _population, int _iteration,
+            double _select_best, double _cross, double _transform, double _new_car, bool _operator_choose,
+            bool _output_style)
         {
             this.Show();
 
@@ -62,15 +67,20 @@ namespace genetic_ui
             population = _population;
             iteration = _iteration;
             select_best = _select_best;
+            cross = _cross;
             transform = _transform;
             new_car = _new_car;
+            operator_choose = _operator_choose;
+            output_style = _output_style;
 
             meta = new MetaData();
             core = new GeneticCore();
         }
 
-        private void StartGenetic(bool _import_xml, string _import_path, int _map, int _ashbin, int _truck, int _capacity, int _demand,
-            bool _export_xml, string _export_path, int _population, int _iteration, double _select_best, double _transform, double _new_car)
+        private void StartGenetic(bool _import_xml, string _import_path, int _map, int _ashbin, int _truck,
+            int _capacity, int _demand, bool _export_xml, string _export_path, int _population, int _iteration,
+            double _select_best, double _cross, double _transform, double _new_car, bool _operator_choose,
+            bool _output_style)
         {
             try
             {
@@ -124,7 +134,7 @@ namespace genetic_ui
                 }
 
                 //调用算法核心
-                core.SetValue(_population, _select_best, _transform, _new_car);
+                core.SetValue(_population, _select_best, _cross, _transform, _new_car);
                 core.Meta = meta;
                 new Thread(() =>
                 {
@@ -141,7 +151,9 @@ namespace genetic_ui
                         IterationBar.Maximum = _iteration;
                     }));
                 }).Start();
-                //double best = core.GlobalShortestDistance;
+
+                double best = core.GlobalShortestDistance;
+
                 for (int i = 0; i < _iteration; i++)
                 {
                     //关闭窗口时发送Cancel指令，每轮循环时检查token
@@ -149,36 +161,58 @@ namespace genetic_ui
                     {
                         break;
                     }
+
                     core.CaculateFitness();
-                    //if (best > core.GlobalShortestDistance)
-                    //{
-                    //    best = core.GlobalShortestDistance;
-                    //    string message = String.Format("迭代至第{0}轮时，发现了新的最优解：目前的最优解是{1}公里。", i + 1, core.GlobalShortestDistance.ToString("F2"));
-                    //    new Thread(() =>
-                    //    {
-                    //        this.Dispatcher.Invoke(new Action(() =>
-                    //        {
-                    //            ConsoleOutputBox.Items.Add(message);
-                    //            ConsoleScroll.ScrollToEnd();
-                    //        }));
-                    //    }).Start();
-                    //}
-                    string message = String.Format("当前是第{0}轮，此轮中适应度最高的后代解为{1}公里，目前的最优解是{2}公里。", i + 1, core.PopulationShortestDistance,
-                        core.GlobalShortestDistance);
 
-                    core.SelectChildren();
-                    //core.IndividualsTransform();
-                    core.OidIndividualsTransform();
-
-                    new Thread(() => 
+                    if (_output_style == true)
                     {
-                        this.Dispatcher.Invoke(new Action(() =>
+                        if (best > core.GlobalShortestDistance)
                         {
-                            IterationBar.Value = i + 1;
-                            ConsoleOutputBox.Items.Add(message);
-                            ConsoleScroll.ScrollToEnd();
-                        }));
-                    }).Start();
+                            best = core.GlobalShortestDistance;
+                            string message = String.Format("迭代至第{0}轮时，发现了新的最优解：目前的最优解是{1}公里。", i + 1, core.GlobalShortestDistance.ToString("F2"));
+                            new Thread(() =>
+                            {
+                                this.Dispatcher.Invoke(new Action(() =>
+                                {
+                                    ConsoleOutputBox.Items.Add(message);
+                                    ConsoleScroll.ScrollToEnd();
+                                }));
+                            }).Start();
+                        }
+
+                        core.SelectChildren();
+
+                        if (_operator_choose == true) core.InverOverTransform();
+                        else core.NovelCrossTransform();
+
+                        new Thread(() =>
+                        {
+                            this.Dispatcher.Invoke(new Action(() =>
+                            {
+                                IterationBar.Value = i + 1;
+                            }));
+                        }).Start();
+                    }
+                    else
+                    {
+                        string message = String.Format("当前是第{0}轮，此轮中适应度最高的后代解为{1}公里，目前的最优解是{2}公里。", i + 1, core.PopulationShortestDistance,
+                            core.GlobalShortestDistance);
+
+                        core.SelectChildren();
+
+                        if (_operator_choose == true) core.InverOverTransform();
+                        else core.NovelCrossTransform();
+
+                        new Thread(() =>
+                        {
+                            this.Dispatcher.Invoke(new Action(() =>
+                            {
+                                IterationBar.Value = i + 1;
+                                ConsoleOutputBox.Items.Add(message);
+                                ConsoleScroll.ScrollToEnd();
+                            }));
+                        }).Start();
+                    }
                 }
 
                 new Thread(() =>
@@ -222,7 +256,7 @@ namespace genetic_ui
                     {
                         ConsoleOutputBox.Items.Add("致命错误：" + anyone.Message);
                     }));
-                }).Start();                
+                }).Start();
             }
         }
 
@@ -230,7 +264,7 @@ namespace genetic_ui
         {
             kill_task = new CancellationTokenSource();
             Task.Run(() => StartGenetic(import_xml, import_path, map, ashbin, truck, capacity, demand,
-                    export_xml, export_path, population, iteration, select_best, transform, new_car),kill_task.Token);            
+                    export_xml, export_path, population, iteration, select_best, cross, transform, new_car, operator_choose, output_style),kill_task.Token);            
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)

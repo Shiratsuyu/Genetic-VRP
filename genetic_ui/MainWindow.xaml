@@ -140,11 +140,30 @@
                     <TextBox x:Name="IterationBox" Grid.Row="2" Grid.Column="2" Text="10000" VerticalContentAlignment="Center" />
                     <TextBlock Grid.Row="4" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right">选种比例：</TextBlock>
                     <TextBox x:Name="SelectBox" Grid.Row="4" Grid.Column="2" Text="0.25" VerticalContentAlignment="Center" />
-                    <TextBlock Grid.Row="6" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right">变异概率：</TextBlock>
-                    <TextBox x:Name="TransformBox" Grid.Row="6" Grid.Column="2" Text="0.2" VerticalContentAlignment="Center" />
-                    <TextBlock Grid.Row="8" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right">新车始发：</TextBlock>
-                    <TextBox x:Name="NewCarBox" Grid.Row="8" Grid.Column="2" Text="0.5" VerticalContentAlignment="Center" />
-                    <Button x:Name="ResetGeneticButton" Grid.Row="10" Grid.ColumnSpan="4" Click="ResetGeneticButton_Click">恢复预设...</Button>
+                    <TextBlock Grid.Row="6" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right">交配概率：</TextBlock>
+                    <TextBox x:Name="CrossBox" Grid.Row="6" Grid.Column="2" Text="0.8" VerticalContentAlignment="Center" />
+                    <TextBlock Grid.Row="8" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right">变异概率：</TextBlock>
+                    <TextBox x:Name="TransformBox" Grid.Row="8" Grid.Column="2" Text="0.2" VerticalContentAlignment="Center" />
+                    <TextBlock Grid.Row="10" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right">新车始发：</TextBlock>
+                    <TextBox x:Name="NewCarBox" Grid.Row="10" Grid.Column="2" Text="0.5" VerticalContentAlignment="Center" />
+                    <Grid Grid.Row="12" Grid.Column="1" Grid.RowSpan="3" Grid.ColumnSpan="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <GroupBox Header="遗传算子选择">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="5"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <RadioButton x:Name="OperatorChoose" Content="使用Inver-Over遗传算子(无交配)" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" IsChecked="True"/>
+                                <RadioButton Content="使用新颖交叉遗传算子" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                            </Grid>
+                        </GroupBox>
+                        <Button x:Name="ResetGeneticButton" Grid.Column="1" Click="ResetGeneticButton_Click" Margin="10,10,0,0">恢复预设...</Button>
+                    </Grid>
                 </Grid>
             </TabItem>
         </TabControl>
@@ -153,7 +172,7 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Button Click="StartCompute" Grid.Column="2">启 动</Button>
+            <Button Click="StartCompute" Grid.Column="2" FontWeight="ExtraBold" FontSize="16" >启 动</Button>
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
@@ -161,7 +180,7 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <TextBlock Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center">输出设定：</TextBlock>
-                <RadioButton Grid.Column="1" x:Name="OutPutSetting" Content="摘要模式" HorizontalAlignment="Left" VerticalAlignment="Center" IsChecked="True"/>
+                <RadioButton Grid.Column="1" x:Name="OutPutStyle" Content="摘要模式" HorizontalAlignment="Left" VerticalAlignment="Center" IsChecked="True"/>
                 <RadioButton Grid.Column="2" Content="日志模式" HorizontalAlignment="Left" VerticalAlignment="Center"/>
             </Grid>
         </Grid>

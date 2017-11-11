@@ -69,6 +69,7 @@ namespace genetic_ui
             MapBox.Text = "1000";
             ExportData.IsChecked = true;
             ExportBox.Text = @"C:\Users\Public\Desktop\";
+            OutPutStyle.IsChecked = true;
         }
 
         private void ResetGeneticButton_Click(object sender, RoutedEventArgs e)
@@ -76,8 +77,11 @@ namespace genetic_ui
             PopulationBox.Text = "300";
             IterationBox.Text = "10000";
             SelectBox.Text = "0.25";
+            CrossBox.Text = "0.8";
             TransformBox.Text = "0.2";
             NewCarBox.Text = "0.5";
+            OperatorChoose.IsChecked = true;
+            OutPutStyle.IsChecked = true;
         }
 
         private void StartCompute(object sender, RoutedEventArgs e)
@@ -85,10 +89,13 @@ namespace genetic_ui
             CanvasWindow canvas_window = new CanvasWindow();
             bool import_xml = (ImportXml.IsChecked == true);
             bool export_xml = (ExportData.IsChecked == true);
+            bool operator_choose = (OperatorChoose.IsChecked == true);
+            bool output_style = (OutPutStyle.IsChecked == true);
             canvas_window.SendArgument(import_xml, ImportBox.Text, int.Parse(MapBox.Text), int.Parse(AshbinBox.Text),
                 int.Parse(TruckBox.Text), int.Parse(CapacityBox.Text), int.Parse(DemandBox.Text),
                 export_xml, ExportBox.Text, int.Parse(PopulationBox.Text), int.Parse(IterationBox.Text),
-                double.Parse(SelectBox.Text), double.Parse(TransformBox.Text), double.Parse(NewCarBox.Text));
+                double.Parse(SelectBox.Text), double.Parse(CrossBox.Text), double.Parse(TransformBox.Text),
+                double.Parse(NewCarBox.Text), operator_choose, output_style);
         }
     }
 }

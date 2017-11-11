@@ -13,6 +13,7 @@ namespace genetic_ui
     {
 
         private int population_size;
+        private double select_best_probability;
         private double cross_probability;
         private double transform_probability;
         private double new_car_probability;
@@ -49,9 +50,10 @@ namespace genetic_ui
             random = new Random(DateTime.Now.GetHashCode()); //根据当前时间生成随机数种子
         }
 
-        public void SetValue(int pop_size, double cross_prob, double trans_prob, double new_car_prob)
+        public void SetValue(int pop_size, double select_best_prob, double cross_prob, double trans_prob, double new_car_prob)
         {
             population_size = pop_size;
+            select_best_probability = select_best_prob;
             cross_probability = cross_prob;
             transform_probability = trans_prob;
             new_car_probability = new_car_prob;
@@ -206,7 +208,7 @@ namespace genetic_ui
             //赌轮盘决定下代个体
             List<List<int>> next_population = new List<List<int>>();
             double roll;
-            for (int i = 0; i < population_size - 1; i++)
+            for (int i = 0; i < population_size; i++)
             {
                 roll = random.NextDouble();
                 for (int j = 0; j < population_size; j++)
@@ -224,7 +226,7 @@ namespace genetic_ui
             //复制对应概率的最优个体进行选种
             for (int i = 0; i < population_size; i++)
             {
-                if (random.NextDouble() < 0.25)
+                if (random.NextDouble() < select_best_probability)
                 {
                     List<int> best = new List<int>();
                     for (int j = 0; j < population_best_individual.Count; j++) best.Add(population_best_individual[j]);
@@ -239,7 +241,7 @@ namespace genetic_ui
         }
 
         //NovelCross
-        public void IndividualsTransform()
+        public void NovelCrossTransform()
         {
             //交配
             for (int i = 0; i < population_size - 2; i += 2)
@@ -295,7 +297,7 @@ namespace genetic_ui
 
         [Obsolete("我可……去你妈的吧")]
         //InsvreOver
-        public void OidIndividualsTransform()
+        public void InverOverTransform()
         {
             for (int i = 0; i < population_size; i++)
             {
