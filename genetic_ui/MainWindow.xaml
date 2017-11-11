@@ -91,8 +91,8 @@
                                     <ColumnDefinition Width="*"/>
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
-                                <RadioButton x:Name="ExportData" Content="是" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" IsChecked="True"/>
-                                <RadioButton Content="否" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                <RadioButton x:Name="ExportData" Content="是" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                <RadioButton Content="否" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" IsChecked="True"/>
                             </Grid>
                             <Grid Grid.Row="6" Grid.ColumnSpan="4">
                                 <Grid.ColumnDefinitions>

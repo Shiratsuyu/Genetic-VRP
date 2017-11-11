@@ -29,19 +29,19 @@ namespace genetic_ui
         private List<int> population_shortest_route;
         private List<int> population_best_individual;
 
-        /// <summary>只写访问器，给核心类添加用于生成种群的元数据引用</summary>
+        /// <summary>只写访问器，给核心类添加用于生成种群的元数据引用。</summary>
         public MetaData Meta { set => meta = value; }
 
-        /// <summary>获取所有代中的最优解</summary>
+        /// <summary>获取所有代中的最优解。</summary>
         public double GlobalShortestDistance { get => global_shortest_distance; }
 
-        /// <summary>获取当前代中的最优解</summary>
+        /// <summary>获取当前代中的最优解。</summary>
         public double PopulationShortestDistance { get => population_shortest_distance; }
 
-        /// <summary>获取所有代中的最短路径</summary>
+        /// <summary>获取所有代中的最短路径。</summary>
         public List<int> GlobalShortestRoute { get => global_shortest_route; }
 
-        /// <summary>获取所有代中的最短路径</summary>
+        /// <summary>获取所有代中的最短路径。（为画布图形化显示最短路预留的接口）</summary>
         public List<int> PopulationShortestRoute { get => population_shortest_route; }
 
         public GeneticCore()
@@ -60,7 +60,7 @@ namespace genetic_ui
         }
 
         /// <summary>
-        /// 初始化种群
+        /// 初始化种群。
         /// </summary>
         public void InitializePopulation()
         {
@@ -154,7 +154,7 @@ namespace genetic_ui
         }
 
         /// <summary>
-        /// 为计算距离的lambda表达式提供委托
+        /// 为计算距离的lambda表达式提供委托。
         /// </summary>
         /// <param name="a">第一个点</param>
         /// <param name="b">第二个点</param>
@@ -164,6 +164,9 @@ namespace genetic_ui
         private TwoPoints Distance = (Vertex a, Vertex b) =>
             Math.Sqrt((b.x - a.x) * (b.x - a.x) + (b.y - a.y) * (b.y - a.y));
 
+        /// <summary>
+        /// 计算当前种群各个体的适应度。
+        /// </summary>
         public void CaculateFitness()
         {
             List<int> route = new List<int>();
@@ -193,6 +196,9 @@ namespace genetic_ui
             }
         }
 
+        /// <summary>
+        /// 选择下一代个体，包含计算累计概率、轮盘赌和批量复制最优个体三个部分。
+        /// </summary>
         public void SelectChildren()
         {
             //计算累计概率
@@ -240,7 +246,9 @@ namespace genetic_ui
             individuals_fitness.Clear();
         }
 
-        //NovelCross
+        /// <summary>
+        /// NovelCross遗传算子对应的操作函数。
+        /// </summary>
         public void NovelCrossTransform()
         {
             //交配
@@ -295,8 +303,9 @@ namespace genetic_ui
 
         }
 
-        [Obsolete("我可……去你妈的吧")]
-        //InsvreOver
+        /// <summary>
+        /// InverOver遗传算子对应的操作函数。
+        /// </summary>
         public void InverOverTransform()
         {
             for (int i = 0; i < population_size; i++)

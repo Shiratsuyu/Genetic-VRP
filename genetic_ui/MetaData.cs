@@ -20,10 +20,10 @@ namespace genetic_ui
     class MetaData
     {
 
-        private int map_size = 1000;
-        private int ashbin_num = 50;
-        private int truck_num = 3;
-        private int capacity = 50;
+        private int map_size;
+        private int ashbin_num;
+        private int truck_num;
+        private int capacity;
         private bool defined = false;
         private Vertex origin;
         private Vertex target;
