@@ -1,0 +1,169 @@
+﻿<Window x:Class="genetic_ui.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:genetic_ui"
+        mc:Ignorable="d"
+        Title="遗传算法-垃圾回收问题" MaxHeight="365" MinHeight="365" Height="365" Width="525" FontSize="14">
+    <Grid Height="335">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="24.949"/>
+            <RowDefinition Height="270.051"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <TabControl Grid.Row="0" Grid.RowSpan="2">
+            <TabItem Header="数据源设定">
+                <Grid Margin="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="6"/>
+                        <ColumnDefinition Width="80"/>
+                        <ColumnDefinition Width="5"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="160"/>
+                        <ColumnDefinition Width="6"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="25"/>
+                        <RowDefinition Height="5"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="5"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="0" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center">数据来源：</TextBlock>
+                    <Grid Grid.Row="0" Grid.Column="3">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <RadioButton x:Name="ImportXml" Content="导入XML" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" IsChecked="True"/>
+                        <RadioButton Content="随机生成" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Grid>
+                    <GroupBox Header="XML导入设定" Grid.Row="2" VerticalAlignment="Top" Grid.ColumnSpan="7" Margin="0,0,0,0" Height="49.78">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="25" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="80"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="90"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right">文件位置：</TextBlock>
+                            <TextBox x:Name="ImportBox" Grid.Column="1" Text="C:\data.xml" VerticalContentAlignment="Center" />
+                            <Button x:Name="ImportButton" Grid.Column="2" Click="ImportButton_Click">浏览...</Button>
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox Header="随机生成设定" Grid.Row="4" Grid.ColumnSpan="7" Margin="0" Grid.RowSpan="2" Height="auto">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="80"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="80"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="25"/>
+                                <RowDefinition Height="5"/>
+                                <RowDefinition Height="25"/>
+                                <RowDefinition Height="5"/>
+                                <RowDefinition Height="25"/>
+                                <RowDefinition Height="5"/>
+                                <RowDefinition Height="25"/>
+                                <RowDefinition Height="5"/>
+                                <RowDefinition Height="25"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right">垃圾桶数：</TextBlock>
+                            <TextBox x:Name="AshbinBox" Grid.Row="0" Grid.Column="1" Text="50" VerticalContentAlignment="Center" />
+                            <TextBlock Grid.Row="0" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Right">单桶上限：</TextBlock>
+                            <TextBox x:Name="DemandBox" Grid.Row="0" Grid.Column="3" Text="10" VerticalContentAlignment="Center" />
+                            <TextBlock Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right">垃圾车数：</TextBlock>
+                            <TextBox x:Name="TruckBox" Grid.Row="2" Grid.Column="1" Text="3" VerticalContentAlignment="Center" />
+                            <TextBlock Grid.Row="2" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Right">车辆负载：</TextBlock>
+                            <TextBox x:Name="CapacityBox" Grid.Row="2" Grid.Column="3" Text="50" VerticalContentAlignment="Center" />
+                            <TextBlock Grid.Row="4" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right">地图尺寸：</TextBlock>
+                            <TextBox x:Name="MapBox" Grid.Row="4" Grid.Column="1" Text="1000" VerticalContentAlignment="Center" />
+                            <TextBlock Grid.Row="4" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Right">保存文件：</TextBlock>
+                            <Grid Grid.Row="4" Grid.Column="3">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <RadioButton x:Name="ExportData" Content="是" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" IsChecked="True"/>
+                                <RadioButton Content="否" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Grid>
+                            <Grid Grid.Row="6" Grid.ColumnSpan="4">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="110"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="90"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right">输出文件路径：</TextBlock>
+                                <TextBox x:Name="ExportBox" Grid.Column="1" Text="C:\Users\Public\Desktop\" VerticalContentAlignment="Center" />
+                                <Button x:Name="ExportButton" Grid.Column="2" Click="ExportButton_Click">浏览...</Button>
+                            </Grid>
+                            <Button x:Name="ResetDataButton" Grid.Row="8" Grid.Column="3" Click="ResetDataButton_Click">恢复预设...</Button>
+                        </Grid>
+                    </GroupBox>
+                </Grid>
+            </TabItem>
+            <TabItem Header="遗传参数设定">
+                <Grid Margin="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="6"/>
+                        <ColumnDefinition Width="80"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="6"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="25"/>
+                        <RowDefinition Height="5"/>
+                        <RowDefinition Height="25"/>
+                        <RowDefinition Height="5"/>
+                        <RowDefinition Height="25"/>
+                        <RowDefinition Height="5"/>
+                        <RowDefinition Height="25"/>
+                        <RowDefinition Height="5"/>
+                        <RowDefinition Height="25"/>
+                        <RowDefinition Height="5"/>
+                        <RowDefinition Height="25"/>
+                        <RowDefinition Height="5"/>
+                        <RowDefinition Height="25"/>
+                        <RowDefinition Height="5"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right">种群规模：</TextBlock>
+                    <TextBox x:Name="PopulationBox" Grid.Row="0" Grid.Column="2" Text="300" VerticalContentAlignment="Center" />
+                    <TextBlock Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right">迭代次数：</TextBlock>
+                    <TextBox x:Name="IterationBox" Grid.Row="2" Grid.Column="2" Text="10000" VerticalContentAlignment="Center" />
+                    <TextBlock Grid.Row="4" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right">选种比例：</TextBlock>
+                    <TextBox x:Name="SelectBox" Grid.Row="4" Grid.Column="2" Text="0.25" VerticalContentAlignment="Center" />
+                    <TextBlock Grid.Row="6" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right">变异概率：</TextBlock>
+                    <TextBox x:Name="TransformBox" Grid.Row="6" Grid.Column="2" Text="0.2" VerticalContentAlignment="Center" />
+                    <TextBlock Grid.Row="8" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right">新车始发：</TextBlock>
+                    <TextBox x:Name="NewCarBox" Grid.Row="8" Grid.Column="2" Text="0.5" VerticalContentAlignment="Center" />
+                    <Button x:Name="ResetGeneticButton" Grid.Row="10" Grid.ColumnSpan="4" Click="ResetGeneticButton_Click">恢复预设...</Button>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <Grid Grid.Row="2" Margin="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button Click="StartCompute" Grid.Column="2">启 动</Button>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center">输出设定：</TextBlock>
+                <RadioButton Grid.Column="1" x:Name="OutPutSetting" Content="摘要模式" HorizontalAlignment="Left" VerticalAlignment="Center" IsChecked="True"/>
+                <RadioButton Grid.Column="2" Content="日志模式" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

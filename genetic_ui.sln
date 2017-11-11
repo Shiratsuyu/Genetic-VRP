@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2005
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "genetic_ui", "genetic_ui\genetic_ui.csproj", "{2D5D9937-6E81-4E5F-8210-3C3BB7D071E0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2D5D9937-6E81-4E5F-8210-3C3BB7D071E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D5D9937-6E81-4E5F-8210-3C3BB7D071E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D5D9937-6E81-4E5F-8210-3C3BB7D071E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D5D9937-6E81-4E5F-8210-3C3BB7D071E0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {64975A9A-5059-4A42-864B-F97332F6F7CB}
+	EndGlobalSection
+EndGlobal
