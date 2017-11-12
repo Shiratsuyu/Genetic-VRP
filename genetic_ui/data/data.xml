@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data>
+	<!-- 关于XML文件的编码格式说明：
+		<data>标签为整个数据文件的根节点，其内容必须包含以下子标签：
+			<MapSize>为正方形地图的边长；
+			<AshbinNum>为整个地图上垃圾桶的数量；
+			<TruckNum>为地图上卡车的数量；
+			<Capacity>为单辆卡车的最大载重。
+		以上标签均为无符号整数，必须保证每种有且仅有一个。
+      此外还有两个标签：
+      <Origin>与<Target>。
+      代表起点与终点，他们都包含两个子标签：x坐标与y坐标。
+	-->
+	<MapSize>1000</MapSize>
+	<AshbinNum>20</AshbinNum>
+	<TruckNum>3</TruckNum>
+	<Capacity>80</Capacity>
+  <Origin>
+		<x>12</x>
+		<y>27</y>
+	</Origin>
+	<Target>
+		<x>864</x>
+		<y>731</y>
+	</Target>
+	<!--
+		除以上6个标签外，还应包含一子标签<Vertexs>，用以存储地图上有特殊定义的坐标点的集合：
+	-->
+	<Vertexs>
+		<Ashbin id="1">
+			<x>46</x>
+			<y>678</y>
+			<demand>5</demand>
+		</Ashbin>
+		<Ashbin id="2">
+			<x>526</x>
+			<y>984</y>
+			<demand>3</demand>
+		</Ashbin>
+		<Ashbin id="3">
+			<x>742</x>
+			<y>123</y>
+			<demand>9</demand>
+		</Ashbin>
+		<Ashbin id="4">
+			<x>97</x>
+			<y>433</y>
+			<demand>2</demand>
+		</Ashbin>
+		<Ashbin id="5">
+			<x>263</x>
+			<y>689</y>
+			<demand>7</demand>
+		</Ashbin>
+	</Vertexs>
+</data>
