@@ -20,14 +20,14 @@ namespace genetic_ui
     class MetaData
     {
 
-        private int map_size;
-        private int ashbin_num;
-        private int truck_num;
-        private int capacity;
-        private bool defined = false;
-        private Vertex origin;
-        private Vertex target;
-        private Vertex[] vertexs;
+        private int map_size;   //地图的分辨率
+        private int ashbin_num; //垃圾桶数量
+        private int truck_num;  //拥有的垃圾车数量
+        private int capacity;   //单车最大负载
+        private bool defined = false;   //是否已经装载好数据
+        private Vertex origin;  //起点
+        private Vertex target;  //终点
+        private Vertex[] vertexs;   //用来存储代表垃圾桶的点的数据
 
         /// <summary>描述地图的尺寸。地图为长宽相等的正方形，该变量为地图的边长。</summary>
         public int MapSize { get => map_size; }
@@ -45,7 +45,7 @@ namespace genetic_ui
         /// <summary>节点列表数组（已经废弃）。</summary>
         //public Vertex[] Vertexs { get => vertexs; }
 
-        //添加了可用下标-1访问的索引器
+        //添加了可用下标-1访问的索引器，使得在访问MetaData类的对所存储的点时可以有类似数组的行为，并可以通过-1索引起点、0索引终点
         public Vertex this[int index]
         {
             get

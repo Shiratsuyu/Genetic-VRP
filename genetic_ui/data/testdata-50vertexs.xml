@@ -1,0 +1,517 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<data>
+  <MapSize>1000</MapSize>
+  <AshbinNum>100</AshbinNum>
+  <TruckNum>3</TruckNum>
+  <Capacity>50</Capacity>
+  <Origin>
+    <x>757</x>
+    <y>505</y>
+  </Origin>
+  <Target>
+    <x>856</x>
+    <y>60</y>
+  </Target>
+  <Vertexs>
+    <Ashbin id="1">
+      <x>926</x>
+      <y>125</y>
+      <demand>7</demand>
+    </Ashbin>
+    <Ashbin id="2">
+      <x>645</x>
+      <y>645</y>
+      <demand>4</demand>
+    </Ashbin>
+    <Ashbin id="3">
+      <x>472</x>
+      <y>427</y>
+      <demand>1</demand>
+    </Ashbin>
+    <Ashbin id="4">
+      <x>724</x>
+      <y>251</y>
+      <demand>7</demand>
+    </Ashbin>
+    <Ashbin id="5">
+      <x>626</x>
+      <y>979</y>
+      <demand>1</demand>
+    </Ashbin>
+    <Ashbin id="6">
+      <x>408</x>
+      <y>9</y>
+      <demand>10</demand>
+    </Ashbin>
+    <Ashbin id="7">
+      <x>945</x>
+      <y>389</y>
+      <demand>10</demand>
+    </Ashbin>
+    <Ashbin id="8">
+      <x>152</x>
+      <y>717</y>
+      <demand>4</demand>
+    </Ashbin>
+    <Ashbin id="9">
+      <x>839</x>
+      <y>340</y>
+      <demand>4</demand>
+    </Ashbin>
+    <Ashbin id="10">
+      <x>583</x>
+      <y>518</y>
+      <demand>4</demand>
+    </Ashbin>
+    <Ashbin id="11">
+      <x>772</x>
+      <y>188</y>
+      <demand>7</demand>
+    </Ashbin>
+    <Ashbin id="12">
+      <x>629</x>
+      <y>396</y>
+      <demand>4</demand>
+    </Ashbin>
+    <Ashbin id="13">
+      <x>675</x>
+      <y>730</y>
+      <demand>2</demand>
+    </Ashbin>
+    <Ashbin id="14">
+      <x>643</x>
+      <y>559</y>
+      <demand>6</demand>
+    </Ashbin>
+    <Ashbin id="15">
+      <x>702</x>
+      <y>146</y>
+      <demand>8</demand>
+    </Ashbin>
+    <Ashbin id="16">
+      <x>990</x>
+      <y>952</y>
+      <demand>2</demand>
+    </Ashbin>
+    <Ashbin id="17">
+      <x>517</x>
+      <y>348</y>
+      <demand>5</demand>
+    </Ashbin>
+    <Ashbin id="18">
+      <x>135</x>
+      <y>911</y>
+      <demand>7</demand>
+    </Ashbin>
+    <Ashbin id="19">
+      <x>941</x>
+      <y>774</y>
+      <demand>5</demand>
+    </Ashbin>
+    <Ashbin id="20">
+      <x>309</x>
+      <y>806</y>
+      <demand>4</demand>
+    </Ashbin>
+    <Ashbin id="21">
+      <x>36</x>
+      <y>889</y>
+      <demand>10</demand>
+    </Ashbin>
+    <Ashbin id="22">
+      <x>729</x>
+      <y>952</y>
+      <demand>1</demand>
+    </Ashbin>
+    <Ashbin id="23">
+      <x>943</x>
+      <y>997</y>
+      <demand>6</demand>
+    </Ashbin>
+    <Ashbin id="24">
+      <x>693</x>
+      <y>733</y>
+      <demand>3</demand>
+    </Ashbin>
+    <Ashbin id="25">
+      <x>817</x>
+      <y>302</y>
+      <demand>9</demand>
+    </Ashbin>
+    <Ashbin id="26">
+      <x>401</x>
+      <y>450</y>
+      <demand>6</demand>
+    </Ashbin>
+    <Ashbin id="27">
+      <x>544</x>
+      <y>850</y>
+      <demand>4</demand>
+    </Ashbin>
+    <Ashbin id="28">
+      <x>178</x>
+      <y>66</y>
+      <demand>2</demand>
+    </Ashbin>
+    <Ashbin id="29">
+      <x>827</x>
+      <y>637</y>
+      <demand>3</demand>
+    </Ashbin>
+    <Ashbin id="30">
+      <x>10</x>
+      <y>689</y>
+      <demand>7</demand>
+    </Ashbin>
+    <Ashbin id="31">
+      <x>937</x>
+      <y>366</y>
+      <demand>10</demand>
+    </Ashbin>
+    <Ashbin id="32">
+      <x>822</x>
+      <y>606</y>
+      <demand>7</demand>
+    </Ashbin>
+    <Ashbin id="33">
+      <x>677</x>
+      <y>973</y>
+      <demand>2</demand>
+    </Ashbin>
+    <Ashbin id="34">
+      <x>719</x>
+      <y>46</y>
+      <demand>10</demand>
+    </Ashbin>
+    <Ashbin id="35">
+      <x>601</x>
+      <y>824</y>
+      <demand>7</demand>
+    </Ashbin>
+    <Ashbin id="36">
+      <x>216</x>
+      <y>318</y>
+      <demand>7</demand>
+    </Ashbin>
+    <Ashbin id="37">
+      <x>842</x>
+      <y>539</y>
+      <demand>4</demand>
+    </Ashbin>
+    <Ashbin id="38">
+      <x>839</x>
+      <y>765</y>
+      <demand>10</demand>
+    </Ashbin>
+    <Ashbin id="39">
+      <x>917</x>
+      <y>859</y>
+      <demand>9</demand>
+    </Ashbin>
+    <Ashbin id="40">
+      <x>740</x>
+      <y>903</y>
+      <demand>4</demand>
+    </Ashbin>
+    <Ashbin id="41">
+      <x>784</x>
+      <y>933</y>
+      <demand>4</demand>
+    </Ashbin>
+    <Ashbin id="42">
+      <x>961</x>
+      <y>757</y>
+      <demand>4</demand>
+    </Ashbin>
+    <Ashbin id="43">
+      <x>355</x>
+      <y>995</y>
+      <demand>7</demand>
+    </Ashbin>
+    <Ashbin id="44">
+      <x>159</x>
+      <y>725</y>
+      <demand>5</demand>
+    </Ashbin>
+    <Ashbin id="45">
+      <x>375</x>
+      <y>826</y>
+      <demand>9</demand>
+    </Ashbin>
+    <Ashbin id="46">
+      <x>432</x>
+      <y>578</y>
+      <demand>3</demand>
+    </Ashbin>
+    <Ashbin id="47">
+      <x>554</x>
+      <y>610</y>
+      <demand>4</demand>
+    </Ashbin>
+    <Ashbin id="48">
+      <x>670</x>
+      <y>168</y>
+      <demand>2</demand>
+    </Ashbin>
+    <Ashbin id="49">
+      <x>298</x>
+      <y>97</y>
+      <demand>7</demand>
+    </Ashbin>
+    <Ashbin id="50">
+      <x>969</x>
+      <y>906</y>
+      <demand>8</demand>
+    </Ashbin>
+    <Ashbin id="51">
+      <x>849</x>
+      <y>937</y>
+      <demand>1</demand>
+    </Ashbin>
+    <Ashbin id="52">
+      <x>881</x>
+      <y>935</y>
+      <demand>2</demand>
+    </Ashbin>
+    <Ashbin id="53">
+      <x>649</x>
+      <y>641</y>
+      <demand>1</demand>
+    </Ashbin>
+    <Ashbin id="54">
+      <x>248</x>
+      <y>862</y>
+      <demand>4</demand>
+    </Ashbin>
+    <Ashbin id="55">
+      <x>913</x>
+      <y>683</y>
+      <demand>9</demand>
+    </Ashbin>
+    <Ashbin id="56">
+      <x>846</x>
+      <y>464</y>
+      <demand>10</demand>
+    </Ashbin>
+    <Ashbin id="57">
+      <x>153</x>
+      <y>485</y>
+      <demand>3</demand>
+    </Ashbin>
+    <Ashbin id="58">
+      <x>579</x>
+      <y>186</y>
+      <demand>3</demand>
+    </Ashbin>
+    <Ashbin id="59">
+      <x>997</x>
+      <y>114</y>
+      <demand>8</demand>
+    </Ashbin>
+    <Ashbin id="60">
+      <x>156</x>
+      <y>662</y>
+      <demand>7</demand>
+    </Ashbin>
+    <Ashbin id="61">
+      <x>766</x>
+      <y>386</y>
+      <demand>1</demand>
+    </Ashbin>
+    <Ashbin id="62">
+      <x>949</x>
+      <y>310</y>
+      <demand>8</demand>
+    </Ashbin>
+    <Ashbin id="63">
+      <x>407</x>
+      <y>494</y>
+      <demand>9</demand>
+    </Ashbin>
+    <Ashbin id="64">
+      <x>689</x>
+      <y>784</y>
+      <demand>10</demand>
+    </Ashbin>
+    <Ashbin id="65">
+      <x>175</x>
+      <y>305</y>
+      <demand>8</demand>
+    </Ashbin>
+    <Ashbin id="66">
+      <x>995</x>
+      <y>758</y>
+      <demand>5</demand>
+    </Ashbin>
+    <Ashbin id="67">
+      <x>336</x>
+      <y>452</y>
+      <demand>7</demand>
+    </Ashbin>
+    <Ashbin id="68">
+      <x>662</x>
+      <y>816</y>
+      <demand>5</demand>
+    </Ashbin>
+    <Ashbin id="69">
+      <x>467</x>
+      <y>269</y>
+      <demand>8</demand>
+    </Ashbin>
+    <Ashbin id="70">
+      <x>778</x>
+      <y>884</y>
+      <demand>9</demand>
+    </Ashbin>
+    <Ashbin id="71">
+      <x>351</x>
+      <y>492</y>
+      <demand>10</demand>
+    </Ashbin>
+    <Ashbin id="72">
+      <x>408</x>
+      <y>483</y>
+      <demand>5</demand>
+    </Ashbin>
+    <Ashbin id="73">
+      <x>234</x>
+      <y>964</y>
+      <demand>4</demand>
+    </Ashbin>
+    <Ashbin id="74">
+      <x>26</x>
+      <y>439</y>
+      <demand>10</demand>
+    </Ashbin>
+    <Ashbin id="75">
+      <x>48</x>
+      <y>464</y>
+      <demand>8</demand>
+    </Ashbin>
+    <Ashbin id="76">
+      <x>343</x>
+      <y>403</y>
+      <demand>9</demand>
+    </Ashbin>
+    <Ashbin id="77">
+      <x>544</x>
+      <y>1</y>
+      <demand>4</demand>
+    </Ashbin>
+    <Ashbin id="78">
+      <x>277</x>
+      <y>821</y>
+      <demand>3</demand>
+    </Ashbin>
+    <Ashbin id="79">
+      <x>25</x>
+      <y>103</y>
+      <demand>6</demand>
+    </Ashbin>
+    <Ashbin id="80">
+      <x>669</x>
+      <y>481</y>
+      <demand>1</demand>
+    </Ashbin>
+    <Ashbin id="81">
+      <x>36</x>
+      <y>629</y>
+      <demand>7</demand>
+    </Ashbin>
+    <Ashbin id="82">
+      <x>70</x>
+      <y>338</y>
+      <demand>3</demand>
+    </Ashbin>
+    <Ashbin id="83">
+      <x>959</x>
+      <y>767</y>
+      <demand>9</demand>
+    </Ashbin>
+    <Ashbin id="84">
+      <x>273</x>
+      <y>761</y>
+      <demand>8</demand>
+    </Ashbin>
+    <Ashbin id="85">
+      <x>113</x>
+      <y>309</y>
+      <demand>1</demand>
+    </Ashbin>
+    <Ashbin id="86">
+      <x>663</x>
+      <y>614</y>
+      <demand>4</demand>
+    </Ashbin>
+    <Ashbin id="87">
+      <x>720</x>
+      <y>124</y>
+      <demand>9</demand>
+    </Ashbin>
+    <Ashbin id="88">
+      <x>871</x>
+      <y>234</y>
+      <demand>9</demand>
+    </Ashbin>
+    <Ashbin id="89">
+      <x>464</x>
+      <y>73</y>
+      <demand>7</demand>
+    </Ashbin>
+    <Ashbin id="90">
+      <x>770</x>
+      <y>383</y>
+      <demand>4</demand>
+    </Ashbin>
+    <Ashbin id="91">
+      <x>905</x>
+      <y>565</y>
+      <demand>5</demand>
+    </Ashbin>
+    <Ashbin id="92">
+      <x>332</x>
+      <y>991</y>
+      <demand>9</demand>
+    </Ashbin>
+    <Ashbin id="93">
+      <x>359</x>
+      <y>979</y>
+      <demand>2</demand>
+    </Ashbin>
+    <Ashbin id="94">
+      <x>409</x>
+      <y>384</y>
+      <demand>7</demand>
+    </Ashbin>
+    <Ashbin id="95">
+      <x>58</x>
+      <y>271</y>
+      <demand>3</demand>
+    </Ashbin>
+    <Ashbin id="96">
+      <x>563</x>
+      <y>164</y>
+      <demand>6</demand>
+    </Ashbin>
+    <Ashbin id="97">
+      <x>195</x>
+      <y>362</y>
+      <demand>5</demand>
+    </Ashbin>
+    <Ashbin id="98">
+      <x>220</x>
+      <y>950</y>
+      <demand>4</demand>
+    </Ashbin>
+    <Ashbin id="99">
+      <x>174</x>
+      <y>166</y>
+      <demand>4</demand>
+    </Ashbin>
+    <Ashbin id="100">
+      <x>729</x>
+      <y>606</y>
+      <demand>3</demand>
+    </Ashbin>
+  </Vertexs>
+</data>

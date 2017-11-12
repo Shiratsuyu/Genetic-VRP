@@ -20,28 +20,27 @@ namespace genetic_ui
     /// </summary>
     public partial class CanvasWindow : Window
     {
-        private bool import_xml;
-        private string import_path;
-        private int map;
-        private int ashbin;
-        private int truck;
-        private int capacity;
-        private int demand;
-        private bool export_xml;
-        private string export_path;
-        private int population;
-        private int iteration;
-        private double select_best;
-        private double cross;
-        private double transform;
-        private double new_car;
-        private bool operator_choose;
-        private bool output_style;
+        private bool import_xml;    //信息是否是从XML文件导入的
+        private string import_path; //若导入XML，导入文件的路径
+        private int map;    //随机生成时地图的尺寸
+        private int ashbin; //随机生成时的垃圾桶数
+        private int truck;  //随机生成时的卡车数
+        private int capacity;   //随机生成时单车的最大载重
+        private int demand; //随机生成时单垃圾桶的最大垃圾数
+        private bool export_xml;    //是否保存随机生成的地图数据
+        private string export_path; //若保存，导出XML数据的路径
+        private int population; //遗传算法的种群数量
+        private int iteration;  //遗传算法的迭代代数
+        private double select_best; //将上代最优解批量复制到下一代的比例
+        private double cross;   //下代个体进行交配的概率（仅对新颖交叉算子有效）
+        private double transform;   //下代个体发生变异的概率
+        private double new_car; //当前卡车满载时，是否使用新车的概率
+        private bool operator_choose;   //选择何种遗传算子
+        private bool output_style;  //输出信息的风格
 
-        private MetaData meta;
-        private GeneticCore core;
-        private CancellationTokenSource kill_task;
-        private List<string> information_source;
+        private MetaData meta;  //用于存储生成或导入的元数据
+        private GeneticCore core;   //用于存储遗传运算的核心类的实例化对象
+        private CancellationTokenSource kill_task;  //监控并行计算线程是否应该终止的token
 
         public CanvasWindow()
         {

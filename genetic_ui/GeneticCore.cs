@@ -11,23 +11,23 @@ namespace genetic_ui
     /// </summary>
     class GeneticCore
     {
-
-        private int population_size;
-        private double select_best_probability;
-        private double cross_probability;
-        private double transform_probability;
-        private double new_car_probability;
-        private Random random;
-        private MetaData meta;
-        private double population_fitness;
-        private List<double> individuals_fitness;
-        private List<List<int>> population;
-        private double global_shortest_distance;
-        private List<int> global_shortest_route;
-        private List<int> global_best_individual;
-        private double population_shortest_distance;
-        private List<int> population_shortest_route;
-        private List<int> population_best_individual;
+        
+        private int population_size;    //种群中个体的数量
+        private double select_best_probability; //下一代选种最优个体的保留比例
+        private double cross_probability;   //下一代种群中个体进行交配的比例（用于NovelCross算子）
+        private double transform_probability;   //下一代种群中个体突变的概率
+        private double new_car_probability; //第一辆车路径规划完成后派出第二辆车的概率
+        private Random random;  //随机数生成器
+        private MetaData meta;  //访问元数据类的引用
+        private double population_fitness;  //该代种群的适应度
+        private List<double> individuals_fitness;   //该代种群中每个个体的适应度
+        private List<List<int>> population; //用于存储该代种群中所有个体的DNA
+        private double global_shortest_distance;    //存储全局最优个体的最优解
+        private List<int> global_shortest_route;    //存储全局最优个体的路线
+        private List<int> global_best_individual;   //存储全局最优个体的DNA
+        private double population_shortest_distance;    //存储该代最优个体的最优解
+        private List<int> population_shortest_route;    //存储该代最优个体的路线
+        private List<int> population_best_individual;   //存储该代最优个体的DNA
 
         /// <summary>只写访问器，给核心类添加用于生成种群的元数据引用。</summary>
         public MetaData Meta { set => meta = value; }
@@ -41,15 +41,26 @@ namespace genetic_ui
         /// <summary>获取所有代中的最短路径。</summary>
         public List<int> GlobalShortestRoute { get => global_shortest_route; }
 
-        /// <summary>获取所有代中的最短路径。（为画布图形化显示最短路预留的接口）</summary>
+        /// <summary>获取所当前代中的最短路径。（为画布图形化显示最短路预留的接口）</summary>
         public List<int> PopulationShortestRoute { get => population_shortest_route; }
 
+        /// <summary>
+        /// 默认初始化类的构造函数
+        /// </summary>
         public GeneticCore()
         {
             global_shortest_distance = double.MaxValue;
             random = new Random(DateTime.Now.GetHashCode()); //根据当前时间生成随机数种子
         }
 
+        /// <summary>
+        /// 向类中添加遗传算法所需要的各种参数
+        /// </summary>
+        /// <param name="pop_size"></param>
+        /// <param name="select_best_prob"></param>
+        /// <param name="cross_prob"></param>
+        /// <param name="trans_prob"></param>
+        /// <param name="new_car_prob"></param>
         public void SetValue(int pop_size, double select_best_prob, double cross_prob, double trans_prob, double new_car_prob)
         {
             population_size = pop_size;
@@ -341,6 +352,5 @@ namespace genetic_ui
                 population[i].Reverse(first_index + 1, second_index - first_index);
             }
         }
-
     }
 }

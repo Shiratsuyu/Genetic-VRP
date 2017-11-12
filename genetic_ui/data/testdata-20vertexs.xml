@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<data>
+  <MapSize>1000</MapSize>
+  <AshbinNum>20</AshbinNum>
+  <TruckNum>3</TruckNum>
+  <Capacity>10</Capacity>
+  <Origin>
+    <x>892</x>
+    <y>349</y>
+  </Origin>
+  <Target>
+    <x>86</x>
+    <y>553</y>
+  </Target>
+  <Vertexs>
+    <Ashbin id="1">
+      <x>18</x>
+      <y>116</y>
+      <demand>4</demand>
+    </Ashbin>
+    <Ashbin id="2">
+      <x>642</x>
+      <y>138</y>
+      <demand>2</demand>
+    </Ashbin>
+    <Ashbin id="3">
+      <x>838</x>
+      <y>258</y>
+      <demand>3</demand>
+    </Ashbin>
+    <Ashbin id="4">
+      <x>914</x>
+      <y>246</y>
+      <demand>2</demand>
+    </Ashbin>
+    <Ashbin id="5">
+      <x>822</x>
+      <y>927</y>
+      <demand>5</demand>
+    </Ashbin>
+    <Ashbin id="6">
+      <x>975</x>
+      <y>357</y>
+      <demand>3</demand>
+    </Ashbin>
+    <Ashbin id="7">
+      <x>549</x>
+      <y>789</y>
+      <demand>3</demand>
+    </Ashbin>
+    <Ashbin id="8">
+      <x>962</x>
+      <y>990</y>
+      <demand>2</demand>
+    </Ashbin>
+    <Ashbin id="9">
+      <x>566</x>
+      <y>617</y>
+      <demand>5</demand>
+    </Ashbin>
+    <Ashbin id="10">
+      <x>851</x>
+      <y>114</y>
+      <demand>3</demand>
+    </Ashbin>
+    <Ashbin id="11">
+      <x>886</x>
+      <y>294</y>
+      <demand>2</demand>
+    </Ashbin>
+    <Ashbin id="12">
+      <x>770</x>
+      <y>602</y>
+      <demand>3</demand>
+    </Ashbin>
+    <Ashbin id="13">
+      <x>148</x>
+      <y>635</y>
+      <demand>4</demand>
+    </Ashbin>
+    <Ashbin id="14">
+      <x>536</x>
+      <y>307</y>
+      <demand>3</demand>
+    </Ashbin>
+    <Ashbin id="15">
+      <x>715</x>
+      <y>634</y>
+      <demand>3</demand>
+    </Ashbin>
+    <Ashbin id="16">
+      <x>90</x>
+      <y>776</y>
+      <demand>1</demand>
+    </Ashbin>
+    <Ashbin id="17">
+      <x>491</x>
+      <y>917</y>
+      <demand>5</demand>
+    </Ashbin>
+    <Ashbin id="18">
+      <x>205</x>
+      <y>538</y>
+      <demand>4</demand>
+    </Ashbin>
+    <Ashbin id="19">
+      <x>985</x>
+      <y>56</y>
+      <demand>1</demand>
+    </Ashbin>
+    <Ashbin id="20">
+      <x>335</x>
+      <y>75</y>
+      <demand>3</demand>
+    </Ashbin>
+  </Vertexs>
+</data>

@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<data>
+  <MapSize>1000</MapSize>
+  <AshbinNum>5</AshbinNum>
+  <TruckNum>3</TruckNum>
+  <Capacity>80</Capacity>
+  <Origin>
+    <x>641</x>
+    <y>641
